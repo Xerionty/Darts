@@ -1,0 +1,314 @@
+<html lang="en" data-bs-theme="dark">
+    <title>Rocky's Dart Board</title>
+    <head>
+        <script src="/docs/5.3/assets/js/color-modes.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <script lang="js">
+            function StartIntro(){
+            var music = new Audio("./src/media/letsplaydarts.wav");
+            music.play();
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <div class="d-flex gap-2 justify-content-center py-5">
+
+            <table class="table table-hover table-sm">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Avg.</th>
+                    <th scope="col">Darts </th>
+                    <th scope="col">Possible Outs</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Marvin</td>
+                    <td>64</td>
+                    <td>47</td>
+                    <td>12</td>
+                    <td>T16 D8, 16 16 D16, 16 8 D20, 14 BULL</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Lesley</td>
+                    <td>501</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>Not Possible</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Melvin</td>
+                    <td>501</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>Not Possible</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Patrick</td>
+                    <td>501</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>Not Possible</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>  
+
+        <div class="d-flex gap-2 justify-content-center py-5">
+
+            <div class="btn-group-vertical" role="group" aria-label="0">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">0</button>
+            
+                <div class="btn-group" role="group" aria-label="0">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">00</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">000</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="1">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">1</button>
+            
+                <div class="btn-group" role="group" aria-label="1">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="2">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">2</button>
+            
+                <div class="btn-group" role="group" aria-label="2">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="3">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">3</button>
+            
+                <div class="btn-group" role="group" aria-label="3">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="4">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">4</button>
+            
+                <div class="btn-group" role="group" aria-label="4">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="5">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">5</button>
+            
+                <div class="btn-group" role="group" aria-label="5">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="6">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">6</button>
+            
+                <div class="btn-group" role="group" aria-label="6">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="7">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">7</button>
+            
+                <div class="btn-group" role="group" aria-label="7">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="8">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">8</button>
+            
+                <div class="btn-group" role="group" aria-label="8">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="9">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">9</button>
+            
+                <div class="btn-group" role="group" aria-label="9">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="10">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">10</button>
+            
+                <div class="btn-group" role="group" aria-label="10">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+        </div>
+
+        <div class="d-flex gap-2 justify-content-center py-5">
+
+            <div class="btn-group-vertical" role="group" aria-label="11">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">11</button>
+            
+                <div class="btn-group" role="group" aria-label="11">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="12">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">12</button>
+            
+                <div class="btn-group" role="group" aria-label="12">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="13">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">2</button>
+            
+                <div class="btn-group" role="group" aria-label="13">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="14">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">14</button>
+            
+                <div class="btn-group" role="group" aria-label="14">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="15">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">15</button>
+            
+                <div class="btn-group" role="group" aria-label="15">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="16">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">16</button>
+            
+                <div class="btn-group" role="group" aria-label="16">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="17">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">17</button>
+            
+                <div class="btn-group" role="group" aria-label="17">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="18">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">18</button>
+            
+                <div class="btn-group" role="group" aria-label="18">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="19">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">19</button>
+            
+                <div class="btn-group" role="group" aria-label="19">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="20">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">20</button>
+            
+                <div class="btn-group" role="group" aria-label="20">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">D</button>
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">T</button>
+                </div> 
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="Bull">
+                <button class="btn btn-primary" type="button" onclick="StartIntro">Bull</button>
+            
+                <div class="btn-group" role="group" aria-label="Bull">
+                    <button class="btn btn-primary" type="button" onclick="StartIntro">Bull's Eye</button>                    
+                </div> 
+            </div>
+
+        </div>
+
+        <div class="d-flex gap-2 justify-content-center py-5">
+
+            <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="input-group">
+                  <div class="input-group-append">
+                    <div class="input-group-text" id="btnGroupAddon">@</div>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Name" aria-label="Player Name" aria-describedby="btnGroupAddon">
+                </div>
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-success">Add Player</button>
+                  </div>
+              </div>
+
+            <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="input-group">
+                  <div class="input-group-append">
+                    <div class="input-group-text" id="btnGroupAddon">#</div>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Player #" aria-label="Player #" aria-describedby="btnGroupAddon">
+                </div>
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-danger">Remove Player</button>
+                  </div>
+              </div>
+              
+        </div>
+
+        <div class="d-flex gap-2 justify-content-center py-5">
+            <button class="btn btn-primary rounded-pill px-3" type="button" onclick="StartIntro">Start</button>
+            <button class="btn btn-secondary rounded-pill px-3" type="button">Secondary</button>
+            <button class="btn btn-success rounded-pill px-3" type="button">Success</button>
+            <button class="btn btn-danger rounded-pill px-3" type="button">Danger</button>
+            <button class="btn btn-warning rounded-pill px-3" type="button">Warning</button>
+            <button class="btn btn-info rounded-pill px-3" type="button">Info</button>
+            <button class="btn btn-light rounded-pill px-3" type="button">Light</button>
+            <button class="btn btn-dark rounded-pill px-3" type="button">Dark</button>
+            <button class="btn btn-link rounded-pill px-3" type="button">Link</button>
+          </div>
+    </body>
+</html>
