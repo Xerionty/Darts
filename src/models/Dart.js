@@ -1,5 +1,5 @@
 class Dart {
-    constructor(number, modifier) {
+    constructor(number, modifier = null) {
         this.number = number;
         this.modifier = modifier;
     }

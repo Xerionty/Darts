@@ -1,14 +1,14 @@
 import Dart from "./Dart.js";
 
 class Player {
-    constructor(id, name) {
-        this.id = id;
+    constructor(name, baseScore) {
         this.name = name;
+        this.baseScore = baseScore;
         this.darts = [];
     }
 
     score() {
-        let score = 4;
+        let score = this.baseScore;
         for(let dart of this.darts) {
             score -= dart.score();
         }
@@ -22,14 +22,17 @@ class Player {
     }
 
     possibleOuts() {
-        return [];
+        return Player.calculateCombinations(this.score(), []);
     }
 
     addDart(dart) {
         this.darts.push(dart);
     }
 
-    findCheckoutCombinations(target, currentDarts = [], result = []) {
+    static findCheckoutCombinations(target, currentDarts = [], result = []) {
+        if(target > 170) return [];
+
+
         // Base case: if target is zero and the last dart is a double or bullseye
         if (target === 0 && currentDarts.length > 0 &&
             (currentDarts[currentDarts.length - 1].modifier === 'd' ||
@@ -54,7 +57,7 @@ class Player {
                 let dartScore = dart.score();
                 if (dartScore <= target) {
                     currentDarts.push(dart);
-                    this.findCheckoutCombinations(target - dartScore, currentDarts, result);
+                    Player.findCheckoutCombinations(target - dartScore, currentDarts, result);
                     currentDarts.pop(); // Backtrack
                 }
             }
@@ -63,7 +66,7 @@ class Player {
         return result;
     }
 
-    filterInefficientCombinations(combinations) {
+    static filterInefficientCombinations(combinations) {
         const seen = new Set();
         return combinations.filter(combo => {
             // Check if the combination is a duplicate
@@ -84,7 +87,7 @@ class Player {
         });
     }
 
-    calculateCost(darts) {
+    static calculateCost(darts) {
         return darts.reduce((totalCost, dart) => {
             if (dart.modifier === 't') return totalCost + 4;
             if (dart.modifier === 'd') return totalCost + 3;
@@ -93,21 +96,21 @@ class Player {
         }, 0);
     }
 
-    calculateCombinations(targetScore, currentDarts) {
+    static calculateCombinations(targetScore, currentDarts) {
         let result = [];
 
         // Try to find the combinations that sum up to the target score and end on a double or bullseye
-        this.findCheckoutCombinations(targetScore, currentDarts, result);
+        Player.findCheckoutCombinations(targetScore, currentDarts, result);
 
         // Filter out the combinations that don't end with a double or bullseye
         result = result.filter(darts => darts.length > 0 &&
             (darts[darts.length - 1].modifier === 'd' || darts[darts.length - 1].number === 50));
 
         // Filter out inefficient combinations
-        result = this.filterInefficientCombinations(result);
+        result = Player.filterInefficientCombinations(result);
 
         // Sort combinations by cost
-        result.sort((a, b) => this.calculateCost(a) - this.calculateCost(b));
+        result.sort((a, b) => Player.calculateCost(a) - Player.calculateCost(b));
 
         return result.splice(0, 5);
     }
