@@ -5,6 +5,7 @@ class Player {
         this.name = name;
         this.baseScore = baseScore;
         this.darts = [];
+        this.legs = 0;
     }
 
     score() {
@@ -18,7 +19,7 @@ class Player {
     average() {
         if(this.darts.length === 0) return 0;
 
-        return Math.round((501 - this.score()) / this.darts.length);
+        return Math.round((this.baseScore - this.score()) / this.darts.length);
     }
 
     possibleOuts() {
@@ -68,7 +69,7 @@ class Player {
 
     static filterInefficientCombinations(combinations) {
         const seen = new Set();
-        return combinations.filter(combo => {
+        let newCombinations = combinations.filter(combo => {
             // Check if the combination is a duplicate
             const key = combo.map(dart => dart.name()).sort().join(',');
             if (seen.has(key)) return false;
@@ -85,6 +86,10 @@ class Player {
 
             return true;
         });
+
+
+        let shortest = Math.min(...newCombinations.map((darts) => darts.length));
+        return newCombinations.filter(combo => combo.length <= shortest);
     }
 
     static calculateCost(darts) {
